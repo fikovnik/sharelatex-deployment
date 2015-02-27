@@ -1,0 +1,25 @@
+mongo:  
+  image: mongo:latest
+  ports:
+    - "27017:27017"
+  volumes:
+    - "/var/lib/mongo:/data/db"
+
+redis:  
+  image: redis:latest
+  ports:
+    - "6379:6379"
+  volumes:
+    - "/var/lib/redis:/data"
+
+sharelatex:
+  build: images/sharelatex
+  links:
+    - mongo
+    - redis
+  ports: 
+    - "80:80"
+  environment:
+    - "SHARELATEX_SITE_URL=http://sharelatex-cloud-2015022.cloudapp.net:80"
+  volumes:
+    - "/var/lib/sharelatex:/var/lib/sharelatex"
