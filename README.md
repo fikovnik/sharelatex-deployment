@@ -134,10 +134,10 @@ Users have to be therefore added manually using the commands described bellow.
 		$ docker $(docker-machine config) ps
 		```
 
-  1. Install full latex distro
+  1. Install full latex distribution
 
   	```sh
-  	$ docker exec $(docker-machine config) tlmgr install scheme-full
+  	$ docker $(docker-machine config) exec sharelatex_sharelatex_1 tlmgr install scheme-full
   	```
 
 ## Managing User Accounts
