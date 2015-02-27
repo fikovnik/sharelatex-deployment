@@ -125,7 +125,7 @@ Users have to be therefore added manually using the commands described bellow.
     $ $(docker-machine env)
     $ docker-compose build
     $ docker-compose pull
-    $ docker-compose up
+    $ docker-compose up -d # detached
     ```
 
 	1. Test
