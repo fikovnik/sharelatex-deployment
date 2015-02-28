@@ -3,14 +3,14 @@ mongo:
   ports:
     - "27017:27017"
   volumes:
-    - "/var/lib/mongo:/data/db"
+    - "/var/lib/boot2docker/sharelatex/mongo:/data/db"
 
 redis:  
   image: redis:latest
   ports:
     - "6379:6379"
   volumes:
-    - "/var/lib/redis:/data"
+    - "/var/lib/boot2docker/sharelatex/redis:/data"
 
 sharelatex:
   build: images/sharelatex
@@ -21,5 +21,6 @@ sharelatex:
     - "80:80"
   environment:
     - "SHARELATEX_SITE_URL=http://sharelatex-cloud-2015022.cloudapp.net:80"
+    # - "SHARELATEX_SITE_URL=http://192.168.99.100:80"
   volumes:
-    - "/var/lib/sharelatex:/var/lib/sharelatex"
+    - "/var/lib/boot2docker/sharelatex/sharelatex:/var/lib/sharelatex"

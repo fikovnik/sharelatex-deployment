@@ -101,7 +101,7 @@ Users have to be therefore added manually using the commands described bellow.
 1. Create data volumes
 
   ```sh
-  $ docker-machine ssh -c "sudo mkdir -p /var/lib/{mongo,redis,sharelatex}"
+  $ docker-machine ssh -c "sudo mkdir -p /var/lib/boot2docker/sharelatex/{mongo,redis,sharelatex}"
   ```
 
   1. Update the sharelatex site URL in `docker-compose.yml`
@@ -146,7 +146,7 @@ $ docker exec -ti sharelatex_mongo_1 mongo
 // set admin
 > db.users.update({email:"<email>"}, {"$set":{isAdmin:true}})
 // add user
-> db.users.insert({email:'', last_name:'', first_name:'', institution:'', hashedPassword:''})
+> db.users.insert(...)
 // list all users
 > db.users.find()
 // remove
