@@ -123,22 +123,17 @@ Users have to be therefore added manually using the commands described bellow.
 
     ```sh
     $ $(docker-machine env)
-    $ docker-compose build
+    $ docker-compose build # this will take a while as it has to install full latex distribution
     $ docker-compose pull
-    $ docker-compose up
+    $ docker-compose up -d
     ```
 
 	1. Test
 
 		```sh
 		$ docker $(docker-machine config) ps
+    $ docker-compose logs
 		```
-
-  1. Install full latex distro
-
-  	```sh
-  	$ docker exec $(docker-machine config) tlmgr install scheme-full
-  	```
 
 ## Managing User Accounts
 
