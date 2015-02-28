@@ -12,7 +12,8 @@ first_name="$3"
 institution="$4"
 hashedPassword="$5"
 
-query="db.users.insert({email:'$email', last_name:'$last_name', first_name:'$first_name', institution:'$institution', hashedPassword:'$hashedPassword'})"
+query="db.users.insert({email:'$email', last_name:'$last_name', first_name:'$first_name', institution:'$institution', hashedPassword:'$hashedPassword',subscription:{hadFreeTrial:false},featureSwitches:{pdfng:true},features:{compileGroup:'standard',compileTimeout:60,github:true,dropbox:true,versioning:true,collaborators:-1},holdingAccount:false,confirmed:false,isAdmin:false})"
+
 
 echo "Executing: $query"
 
