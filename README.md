@@ -125,14 +125,14 @@ Users have to be therefore added manually using the commands described bellow.
     $ $(docker-machine env)
     $ docker-compose build # this will take a while as it has to install full latex distribution
     $ docker-compose pull
-    $ docker-compose up -d
+    $ docker-compose up -d # detached
     ```
 
 	1. Test
 
 		```sh
 		$ docker $(docker-machine config) ps
-    $ docker-compose logs
+        $ docker-compose logs
 		```
 
 ## Managing User Accounts
